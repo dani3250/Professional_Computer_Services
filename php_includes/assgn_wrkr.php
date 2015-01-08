@@ -9,7 +9,7 @@ $sql = "UPDATE tbl_mock SET assigned_worker='$assigned_worker' WHERE id=$id";
 if (mysql_query($sql)) {
 	$update_message = 'Record updated successfully';
 	
-    mysql_query("UPDATE tbl_mock SET fk_status='1' WHERE id=$id");
+    mysql_query("UPDATE tbl_mock SET status='1' WHERE id=$id");
 
 
 
@@ -44,8 +44,8 @@ if (mysql_query($sql)) {
 	$mail->Body    = "Dear customer,<br><br>
  
 Thank you for contacting <b>Professional Computer Services</b>. We have received your <br>email and our Customer Service team will contact you within the next 24 hrs.<br>
-In the meantime, if you require any further information please feel free to<br> contact our office directly at 024444333<br>
-Please note our working hours are from 8AM to 6PM from saturday to Thrsday.
+In the meantime, if you require any further information please feel free to<br> contact our office directly at 055-9633060<br>
+<br><b>Please note our working hours are from 8AM to 6PM from Saturday to Thursday.</b>
 <br><br><br><br>
 Regards,<br>
 <b>Professional Computer Services</b>";
