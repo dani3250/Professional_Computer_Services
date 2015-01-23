@@ -85,7 +85,12 @@ session_start();
 					<div class="well" style="background-color: #2f96b4;color: #fff;">
 						<div class="row">
 							<div class="col-lg-6 ">
-								<h5>  Ticket Id : <strong><?php echo $id;?></strong></h5>
+								<div class="col-lg-4">
+									<h5>  Ticket Id : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5><strong><?php echo $id;?></strong></h5>
+								</div>
                             </div>
 							<?php
 								//View the complaints table
@@ -96,30 +101,59 @@ session_start();
 							?>
 							
 							<div class="col-lg-6 ">
-                                <h5>Customer Name : <strong><?php echo $ans['c_name']; ?></strong></h5>
+								<div class="col-lg-4">
+                                	<h5>Customer Name : </h5>
+                                </div>
+                                <div class="col-lg-8">
+                                	<h5><strong><?php echo $ans['c_name']; ?></strong></h5>
+                                </div>
                             </div>
 						</div>
 						<div class="row">
 							<div class="col-lg-6 ">
-                                <h5>Email : <strong><?php echo $ans['c_email']; ?></strong></h5>
+								<div class="col-lg-4">
+                                	<h5>Email : </h5> 
+                                </div>
+                                <div class="col-lg-8">
+                                	<h5>
+                                		<strong><?php echo $ans['c_email']; ?></strong>
+                                	</h5>
+                                </div>
                             </div>
 							<div class="col-lg-6 ">
-								<h5>Phone Number : <strong><?php echo $ans['c_mobile']; ?></strong></h5>
+								<div class="col-lg-4">
+									<h5>Phone Number : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5>
+										<strong><?php echo $ans['c_mobile']; ?></strong>
+									</h5>
+								</div>
                             </div>
 						</div>
 						<div class="row">
 							<div class="col-lg-6 ">
-								<h5>Product : <strong><?php echo $ans['product']; ?></strong></h5>
+								<div class="col-lg-4">
+									<h5>Product : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5><strong><?php echo $ans['product']; ?></strong></h5>
+								</div>
                             </div>
 							<div class="col-lg-6 ">
-								<h5>Description : <strong><?php echo $ans['description']; ?></strong></h5>
+								<div class="col-lg-4">
+									<h5>Description : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5><strong><?php echo $ans['description']; ?></strong></h5>
+                            	</div>
                             </div>
 						</div>
 					</div>
 					
 
 					
-					<!--<form action="php_includes/estimation_update.php" method="GET" class="form-horizontal">-->
+					<form action="php_includes/estimation_update.php" method="GET" class="form-horizontal">
 						<input type="hidden" name="id" value="<?php echo $id ;?>">
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Device collected date</label>
@@ -154,14 +188,13 @@ session_start();
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Upload Pictures</label>
 							<div class="col-sm-8">
-								<form enctype="multipart/form-data" action="upload.php" method="post">
 								<div class="fileinput fileinput-new" data-provides="fileinput">
 										<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
 	  								<div>
 	    								<span class="btn btn-default btn-file">
 	    									<span class="fileinput-new">Select image</span>
 	    									<span class="fileinput-exists">Change</span>
-	    									<input name="file[]" type="file" id="file"/>
+	    									<input type="file" name="...">
 	    								</span>
 	    								<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 	  								</div>
@@ -172,7 +205,7 @@ session_start();
 		    							<span class="btn btn-default btn-file">
 		    								<span class="fileinput-new">Select image</span>
 		    								<span class="fileinput-exists">Change</span>
-		    								<input name="file[]" type="file" id="file"/>
+		    								<input type="file" name="...">
 		    							</span>
 		    							<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 		  							</div>
@@ -183,12 +216,11 @@ session_start();
 		    							<span class="btn btn-default btn-file">
 		    								<span class="fileinput-new">Select image</span>
 		    								<span class="fileinput-exists">Change</span>
-		    								<input name="file[]" type="file" id="file"/>
+		    								<input type="file" name="...">
 		    							</span>
 		    							<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 		  							</div>
 								</div>
-
 							</div>
 							
 						</div>
@@ -201,7 +233,7 @@ session_start();
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-9">
-								<button type="submit" name="submit" class="reairSubtn btn btn-primary">Submit</button>
+								<button type="submit" class="reairSubtn btn btn-primary">Submit</button>
 							</div>
 						</div>
 					</form>
