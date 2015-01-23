@@ -42,8 +42,7 @@ session_start();
 	
 
 
-	<link rel="stylesheet" 
-href="css/datatables/dataTables.bootstrap.css"/>
+	<link rel="stylesheet" href="css/datatables/dataTables.bootstrap.css"/>
 
 
 
@@ -63,19 +62,12 @@ href="css/datatables/dataTables.bootstrap.css"/>
     <div id="wrapper">
 
         <!-- Navigation -->
-        
-		 <div id="header">
-		  <?php
-		  include_once 'header.php';
-		  
-		  ?>
-		  </div>
-		
+		<div id="header">
+		  <?php include_once 'header.php';?>
+		</div>
 		
         <div id="page-wrapper">
-
             <div class="container-fluid">
-
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -96,101 +88,92 @@ href="css/datatables/dataTables.bootstrap.css"/>
                     </div>
                 </div>
                 <!-- /.row -->
-
-					
-				 
-                         <div class="table-responsive col-lg-12">
-                            <table id="onsiteWorkTable" class="table table-striped table-bordered">
-                                <thead>
-                                    <tr>
+                <div class="table-responsive col-lg-12">
+                    <table id="onsiteWorkTable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
 										
-										<th>Ticket Id</th>
-                                        <th>Customer Name</th>
-                                        <th>Email</th>
-                                        <th>Phone Number</th>
-                                        <th>Product</th>
-										<th>Description</th>
-										<th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-										  //View the complaints table
-										  $tblmck= "tbl_mock";
-										  $user = $_SESSION['uname'];
-										  $sql = "SELECT * FROM $tblmck WHERE assigned_worker='$user' AND fk_status='2' or fk_status='3'";
-										  $ans = mysql_query($sql);
-											while ($record = mysql_fetch_array($ans))
-										  {
-												echo '<tr>';
-												echo '<td>'. $record['id']."</td>";
-												echo "<td>". $record['c_name']."</td>";
-												echo "<td>". $record['c_email']."</td>";
-												echo "<td>". $record['c_mobile']."</td>";
-												echo "<td>". $record['product']."</td>";
-												echo "<td>". $record['description']."</td>";
-                                                if ($record['fk_status'] ==2) {
-                                                    # code...
+								<th>Ticket Id</th>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Product</th>
+    							<th>Description</th>
+								<th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                              //View the complaints table
+							    $tblmck= "tbl_mock";
+							    $user = $_SESSION['uname'];
+								$sql = "SELECT * FROM $tblmck WHERE assigned_worker='$user' AND fk_status='2' or fk_status='3'";
+								$ans = mysql_query($sql);
+								while ($record = mysql_fetch_array($ans))
+								    {
+									    echo '<tr>';
+									    echo '<td>'. $record['id']."</td>";
+									    echo "<td>". $record['c_name']."</td>";
+									    echo "<td>". $record['c_email']."</td>";
+									    echo "<td>". $record['c_mobile']."</td>";
+									    echo "<td>". $record['product']."</td>";
+									    echo "<td>". $record['description']."</td>";
+                                        if ($record['fk_status'] ==2) {
                                                 
-												echo '<td><button type="button" class="btn btn-primary btn-full addRepairBotton">
-														  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Repair Estimation
-														  </button></td>';
-                                                        }
-                                                elseif ($record['fk_status'] ==3) {
-                                                    # code...
-                                                    echo '<td><button type="button" class="btn btn-primary btn-full addRepairBotton">
-                                                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Henna girl
-                                                          </button></td>';
-                                                }
-												echo "</tr>";
-										  }
-									?>        
-                                </tbody>
-                            </table>
-                        
-                    </div>
-                
-
-
+											echo '<td><button type="button" class="btn btn-primary btn-full addRepairButton">
+												  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Repair Estimation
+												  </button></td>';
+                                        }
+                                        elseif ($record['fk_status'] ==3) {
+                                        
+                                            echo '<td><button type="button" class="btn btn-warning btn-full addSummaryButton">
+                                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Summary
+                                                  </button></td>';
+                                        }
+										echo "</tr>";
+									}
+							?>        
+                        </tbody>
+                    </table>        
+                </div>
             </div>
             <!-- /.container-fluid -->
-
         </div>
         <!-- /#page-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
-
-	
-	
-	
+    <!-- /#wrapper -->	
 	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-	
-	
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" 
-src="js/datatables/jquery.dataTables.min.js"></script>
 
-<script type="text/javascript" 
-src="js/datatables/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" 
+    src="js/datatables/jquery.dataTables.min.js"></script>
 
-	
-	<script>$('.addRepairBotton').on('click', function ()
-                  {
-                    x=( $(this).parent().parent().find('td:first').text());
-                    //document.getElementByid('comp_id') = x;
-                  
-                    window.location.href = "onsiteWorkMore.php?id=" + x;
-                    
+    <script type="text/javascript" 
+    src="js/datatables/dataTables.bootstrap.js"></script>
 
-                    //document.getElementByid('comp_id') = x;
-                  });
-                  </script>
-	
+    	
+    <script>
+    $('.addRepairButton').on('click', function ()
+        {
+            x=( $(this).parent().parent().find('td:first').text());
+            //document.getElementByid('comp_id') = x;
+            window.location.href = "repairEstimation.php?id=" + x;
+            //document.getElementByid('comp_id') = x;
+    });
+    $('.addSummaryButton').on('click', function ()
+        {
+            x=( $(this).parent().parent().find('td:first').text());
+            //document.getElementByid('comp_id') = x;
+            window.location.href = "addSummary.php?id=" + x;
+            //document.getElementByid('comp_id') = x;
+    });
+    
+    </script>
+
 </body>
 
 </html>
