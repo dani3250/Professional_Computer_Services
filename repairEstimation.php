@@ -85,7 +85,12 @@ session_start();
 					<div class="well" style="background-color: #2f96b4;color: #fff;">
 						<div class="row">
 							<div class="col-lg-6 ">
-								<h5>  Ticket Id : <strong><?php echo $id;?></strong></h5>
+								<div class="col-lg-4">
+									<h5>  Ticket Id : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5><strong><?php echo $id;?></strong></h5>
+								</div>
                             </div>
 							<?php
 								//View the complaints table
@@ -96,23 +101,52 @@ session_start();
 							?>
 							
 							<div class="col-lg-6 ">
-                                <h5>Customer Name : <strong><?php echo $ans['c_name']; ?></strong></h5>
+								<div class="col-lg-4">
+                                	<h5>Customer Name : </h5>
+                                </div>
+                                <div class="col-lg-8">
+                                	<h5><strong><?php echo $ans['c_name']; ?></strong></h5>
+                                </div>
                             </div>
 						</div>
 						<div class="row">
 							<div class="col-lg-6 ">
-                                <h5>Email : <strong><?php echo $ans['c_email']; ?></strong></h5>
+								<div class="col-lg-4">
+                                	<h5>Email : </h5> 
+                                </div>
+                                <div class="col-lg-8">
+                                	<h5>
+                                		<strong><?php echo $ans['c_email']; ?></strong>
+                                	</h5>
+                                </div>
                             </div>
 							<div class="col-lg-6 ">
-								<h5>Phone Number : <strong><?php echo $ans['c_mobile']; ?></strong></h5>
+								<div class="col-lg-4">
+									<h5>Phone Number : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5>
+										<strong><?php echo $ans['c_mobile']; ?></strong>
+									</h5>
+								</div>
                             </div>
 						</div>
 						<div class="row">
 							<div class="col-lg-6 ">
-								<h5>Product : <strong><?php echo $ans['product']; ?></strong></h5>
+								<div class="col-lg-4">
+									<h5>Product : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5><strong><?php echo $ans['product']; ?></strong></h5>
+								</div>
                             </div>
 							<div class="col-lg-6 ">
-								<h5>Description : <strong><?php echo $ans['description']; ?></strong></h5>
+								<div class="col-lg-4">
+									<h5>Description : </h5>
+								</div>
+								<div class="col-lg-8">
+									<h5><strong><?php echo $ans['description']; ?></strong></h5>
+                            	</div>
                             </div>
 						</div>
 					</div>
