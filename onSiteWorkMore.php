@@ -119,7 +119,7 @@ session_start();
 					
 
 					
-					<form action="php_includes/estimation_update.php" method="GET" class="form-horizontal">
+					<!--<form action="php_includes/estimation_update.php" method="GET" class="form-horizontal">-->
 						<input type="hidden" name="id" value="<?php echo $id ;?>">
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Device collected date</label>
@@ -154,13 +154,14 @@ session_start();
 						<div class="form-group">
 							<label class="col-sm-3 control-label">Upload Pictures</label>
 							<div class="col-sm-8">
+								<form enctype="multipart/form-data" action="upload.php" method="post">
 								<div class="fileinput fileinput-new" data-provides="fileinput">
 										<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
 	  								<div>
 	    								<span class="btn btn-default btn-file">
 	    									<span class="fileinput-new">Select image</span>
 	    									<span class="fileinput-exists">Change</span>
-	    									<input type="file" name="...">
+	    									<input name="file[]" type="file" id="file"/>
 	    								</span>
 	    								<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 	  								</div>
@@ -171,7 +172,7 @@ session_start();
 		    							<span class="btn btn-default btn-file">
 		    								<span class="fileinput-new">Select image</span>
 		    								<span class="fileinput-exists">Change</span>
-		    								<input type="file" name="...">
+		    								<input name="file[]" type="file" id="file"/>
 		    							</span>
 		    							<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 		  							</div>
@@ -182,11 +183,12 @@ session_start();
 		    							<span class="btn btn-default btn-file">
 		    								<span class="fileinput-new">Select image</span>
 		    								<span class="fileinput-exists">Change</span>
-		    								<input type="file" name="...">
+		    								<input name="file[]" type="file" id="file"/>
 		    							</span>
 		    							<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 		  							</div>
 								</div>
+
 							</div>
 							
 						</div>
@@ -199,7 +201,7 @@ session_start();
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-9">
-								<button type="submit" class="reairSubtn btn btn-primary">Submit</button>
+								<button type="submit" name="submit" class="reairSubtn btn btn-primary">Submit</button>
 							</div>
 						</div>
 					</form>

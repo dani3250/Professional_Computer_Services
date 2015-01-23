@@ -3,8 +3,8 @@ session_start();
 include 'db.php';
 $tbl_user="members"; // Table name
 // username and password sent from form
-$myusername=$_POST['myusername'];
-$mypassword=$_POST['mypassword'];
+$myusername=$_GET['myusername'];
+$mypassword=$_GET['mypassword'];
 
 // To protect MySQL injection (more detail about MySQL injection)
 $myusername = stripslashes($myusername);
@@ -29,7 +29,7 @@ if($count==1){
 $_SESSION["uname"] = $db_uname;
 $_SESSION["urole"] = $db_role;
 if($db_role == "admin"){
-header("location:../index.php");
+//header("location:../index.php");
 }
 elseif ($db_role == "worker") {
  	# code...
