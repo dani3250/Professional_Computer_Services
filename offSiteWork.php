@@ -61,9 +61,7 @@ href="css/datatables/dataTables.bootstrap.css"/>
 
 <body id="<?= basename($_SERVER['PHP_SELF'], ".php")?>">
 
-<input type="hidden" id="onsite_message" value="<?php if (isset($_SESSION["onsite_message"])) {
-    # code...
- echo $_SESSION["onsite_message"];} ?>">
+<input type="hidden" id="onsite_message" value="<?php echo $_SESSION["onsite_message"]; ?>">
 
     <div id="wrapper">
 
@@ -137,7 +135,7 @@ href="css/datatables/dataTables.bootstrap.css"/>
                             echo '<td><button type="button" value="Onsite" class=" bton btn btn-info btn-half">
                                             <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Onsite
                                             </button>
-                                            <button type="button" value="Complete"class="bton btn btn-success btn-half">
+                                            <button type="button" value="Complete" class=" bton btn btn-success btn-half">
                                             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Complete
                                             </button></td>';
                             echo "</tr>";
@@ -191,7 +189,7 @@ $(function() {
     
 	var message_movedOnsite = $(document).find('#onsite_message').val();
 	
-	if(message_movedOnsite != '')
+	if(message_movedOnsite != '' && message_movedOnsite==undefined)
 	{
 		toastr.info(message_movedOnsite);
 		
@@ -207,7 +205,9 @@ $(function() {
                     if (this.value == "Onsite"){
                       y=2;
                     }
-                    else y=3;
+                    if (this.value == "Complete"){
+                      y=3;
+                    }
                     window.location.href = "php_includes/update_status.php?id=" + x + "&status=" + y;
                     
 
