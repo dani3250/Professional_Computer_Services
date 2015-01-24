@@ -17,7 +17,7 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form" action="php_includes/checklogin.php" method="POST">
+                        <form id="loginform" class="form-horizontal" role="form" action="php_includes/checklogin.php" method="GET">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
